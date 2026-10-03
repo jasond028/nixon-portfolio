@@ -14,7 +14,7 @@ export default function About() {
             What I bring to every project, beyond just cutting clips together.
           </p>
         </div>
-
+{/* avoid */}
         <div className="about-grid">
           <motion.div
             className="about-card"
