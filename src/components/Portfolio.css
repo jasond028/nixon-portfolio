@@ -1,0 +1,148 @@
+.reel-scroller {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.reel-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.reel-video-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #000;
+  cursor: pointer;
+}
+
+.reel-video-wrap video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: #000;
+}
+
+.reel-play-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.15),
+    rgba(0, 0, 0, 0.45)
+  );
+  transition: background var(--transition);
+}
+
+.reel-play-btn {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: rgba(var(--accent-rgb), 0.9);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  box-shadow: 0 10px 30px rgba(var(--accent-rgb), 0.5);
+  transition: transform var(--transition);
+}
+
+.reel-video-wrap:hover .reel-play-btn {
+  transform: scale(1.08);
+}
+
+.reel-mute-btn {
+  position: absolute;
+  bottom: 14px;
+  right: 14px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+}
+
+.reel-category {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  font-size: 0.72rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 6px 12px;
+  border-radius: 999px;
+}
+
+.reel-info {
+  padding: 22px 26px 26px;
+}
+
+.reel-info h3 {
+  font-size: 1.25rem;
+  margin-bottom: 8px;
+}
+
+.reel-info p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.reel-more {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 8px;
+  padding: 48px 24px;
+  border: 1.5px dashed var(--border);
+  border-radius: var(--radius);
+  transition: border-color var(--transition), transform var(--transition);
+}
+
+.reel-more:hover {
+  border-color: var(--accent);
+  transform: translateY(-4px);
+}
+
+.reel-more-icon {
+  font-size: 2.4rem;
+  color: var(--accent);
+  margin-bottom: 6px;
+}
+
+.reel-more h3 {
+  font-size: 1.3rem;
+}
+
+.reel-more p {
+  color: var(--text-muted);
+  margin-bottom: 14px;
+}
+
+@media (max-width: 640px) {
+  .reel-info {
+    padding: 18px 20px 22px;
+  }
+
+  .reel-play-btn {
+    width: 58px;
+    height: 58px;
+    font-size: 1.5rem;
+  }
+}
